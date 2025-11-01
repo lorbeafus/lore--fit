@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Enlace iconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--enlace CSS-->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <title>Fauget Fitness</title>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init({
+                publicKey: "zN5poxSAc6404Q5HP" // 🔹 Tu clave pública real
+            });
+        })();
+
+        function enviarConsulta(e) {
+            e.preventDefault();
+
+            const templateParams = {
+                name: document.getElementById("nombre").value,
+                message:
+                    "📞 Teléfono: " + document.getElementById("telefono").value + "\n" +
+                    "📧 Correo: " + document.getElementById("email").value + "\n\n" +
+                    "📝 Consulta:\n" + document.getElementById("mensaje").value,
+                time: new Date().toLocaleString()
+            };
+
+            emailjs.send("service_bnvn7b9", "template_x1rc0b3", templateParams)
+                .then(function (response) {
+                    console.log("✅ Envío exitoso:", response);
+                    
+                    // Mostrar el mensaje de éxito
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.style.display = 'block';
+                    
+                    // Limpiar el formulario
+                    document.getElementById("form-contacto").reset();
+                    
+                    // Ocultar el mensaje después de 3 segundos
+                    setTimeout(function() {
+                        successMessage.style.display = 'none';
+                    }, 3000);
+                }, function (error) {
+                    console.error("❌ Error al enviar:", error);
+                    alert("Ocurrió un error al enviar la consulta. Por favor, intenta nuevamente.");
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!--BARRA MENU PRINCIPAL-->
+        <nav class="barra-navegacion">
+            <div class="nav-logo">
+                <img src="../assets/img/logo.png" alt="Fauget Fitness Logo" width="100px" height="100px">
+            </div>
+            <!--Enlaces del menu principal-->
+            <ul class="nav-links">
+                <li><a href="../../index.html" class="nav__link">Home</a></li>
+                <li><a href="./nosotros.html" class="nav__link">Sobre nosotros</a></li>
+                <li><a href="./planes.html" class="nav__link">Planes</a></li>
+                <li><a href="./contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+<!--CONTENIDO PRINCIPAL-->
+        <main class="contenido">      
+            <h1>Fauget Fitness</h1>
+            <p>Dejanos tu consulta: </p>
+            <form id="form-contacto" onsubmit="enviarConsulta(event); return false;">
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellido</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Lorena Fusillo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 9 11 1234-5678" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Ej: ejemplo@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Detalle de la consulta</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje aquí..."
+                    required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+            <div id="success-message" class="success-message" style="display: none;">
+                ¡Gracias por tu mensaje! Te contactaremos pronto.
+            </div>
+        </form>
+        </main>
+    </header>
+<!--FOOTER medios de pago y enlace con instagram-->
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy;2025 Fauget Fitness. Todos los derechos reservados.</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-section social-links">
+                    <h2>Síguenos en nuestras redes:</h2>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section payment-methods">
+                    <h3>Métodos de pago:</h3>
+                    <img src="../assets/img/metodos.png" alt="Medios de pago" width="200px" height="auto">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
