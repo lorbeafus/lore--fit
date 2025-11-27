@@ -27,7 +27,7 @@ footer {
 
         .footer-bottom {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
             gap: $spacing-lg;
@@ -39,14 +39,22 @@ footer {
                 h2,
                 h3 {
                     margin-bottom: $spacing-sm;
-                    font-size: $font-size-h3;
+                    font-size: 1rem;
                 }
 
                 &.social-links {
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-sm;
+
+                    h2 {
+                        margin-bottom: 0;
+                    }
+
                     .social-icons {
                         display: flex;
                         gap: $spacing-md;
-                        font-size: 2rem;
+                        font-size: 1rem;
 
                         a {
                             color: $color-white;
@@ -68,7 +76,7 @@ footer {
                     img {
                         max-width: 200px;
                         height: auto;
-                        display: block;
+                        display: inline;
                     }
                 }
             }
@@ -79,6 +87,10 @@ footer {
                 text-align: center;
 
                 .footer-section {
+                    &.social-links {
+                        flex-direction: column;
+                    }
+
                     .social-icons {
                         justify-content: center;
                     }

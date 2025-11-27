@@ -252,7 +252,7 @@ footer .footer-content .copyright p {
 }
 footer .footer-content .footer-bottom {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
@@ -264,12 +264,20 @@ footer .footer-content .footer-bottom .footer-section {
 footer .footer-content .footer-bottom .footer-section h2,
 footer .footer-content .footer-bottom .footer-section h3 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+footer .footer-content .footer-bottom .footer-section.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+footer .footer-content .footer-bottom .footer-section.social-links h2 {
+  margin-bottom: 0;
 }
 footer .footer-content .footer-bottom .footer-section.social-links .social-icons {
   display: flex;
   gap: 1.5rem;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 footer .footer-content .footer-bottom .footer-section.social-links .social-icons a {
   color: #1a1818;
@@ -285,13 +293,16 @@ footer .footer-content .footer-bottom .footer-section.social-links .social-icons
 footer .footer-content .footer-bottom .footer-section.payment-methods img {
   max-width: 200px;
   height: auto;
-  display: block;
+  display: inline;
 }
 @media (max-width: 768px) {
   footer .footer-content .footer-bottom {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  footer .footer-content .footer-bottom .footer-section.social-links {
+    flex-direction: column;
   }
   footer .footer-content .footer-bottom .footer-section .social-icons {
     justify-content: center;
