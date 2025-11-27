@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,16 +34,16 @@
             emailjs.send("service_bnvn7b9", "template_x1rc0b3", templateParams)
                 .then(function (response) {
                     console.log("✅ Envío exitoso:", response);
-                    
+
                     // Mostrar el mensaje de éxito
                     const successMessage = document.getElementById('success-message');
                     successMessage.style.display = 'block';
-                    
+
                     // Limpiar el formulario
                     document.getElementById("form-contacto").reset();
-                    
+
                     // Ocultar el mensaje después de 3 segundos
-                    setTimeout(function() {
+                    setTimeout(function () {
                         successMessage.style.display = 'none';
                     }, 3000);
                 }, function (error) {
@@ -52,6 +53,7 @@
         }
     </script>
 </head>
+
 <body>
     <header>
         <!--BARRA MENU PRINCIPAL-->
@@ -59,19 +61,28 @@
             <div class="nav-logo">
                 <img src="../assets/img/logo.png" alt="Fauget Fitness Logo" width="100px" height="100px">
             </div>
+
+            <!-- Botón hamburguesa para móvil -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
             <!--Enlaces del menu principal-->
-            <ul class="nav-links">
-                <li><a href="../../index.html" class="nav__link">Home</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" class="nav__link">Home</a></li>
                 <li><a href="./nosotros.html" class="nav__link">Sobre nosotros</a></li>
                 <li><a href="./planes.html" class="nav__link">Planes</a></li>
                 <li><a href="./contacto.html" class="nav__link">Contacto</a></li>
             </ul>
         </nav>
-<!--CONTENIDO PRINCIPAL-->
-        <main class="contenido">      
-            <h1>Fauget Fitness</h1>
-            <p>Dejanos tu consulta: </p>
-            <form id="form-contacto" onsubmit="enviarConsulta(event); return false;">
+    </header>
+    <!--CONTENIDO PRINCIPAL-->
+    <main class="contenido">
+        <h1>Fauget Fitness</h1>
+        <p>Dejanos tu consulta: </p>
+        <form id="form-contacto" onsubmit="enviarConsulta(event); return false;">
             <div class="form-group">
                 <label for="nombre">Nombre y Apellido</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ej: Lorena Fusillo" required>
@@ -98,15 +109,15 @@
                 ¡Gracias por tu mensaje! Te contactaremos pronto.
             </div>
         </form>
-        </main>
-    </header>
-<!--FOOTER medios de pago y enlace con instagram-->
+    </main>
+
+    <!--FOOTER medios de pago y enlace con instagram-->
     <footer>
         <div class="footer-content">
             <div class="copyright">
                 <p>&copy;2025 Fauget Fitness. Todos los derechos reservados.</p>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-section social-links">
                     <h2>Síguenos en nuestras redes:</h2>
@@ -124,5 +135,7 @@
         </div>
     </footer>
 
+    <script src="../assets/js/menu.js"></script>
 </body>
+
 </html>
