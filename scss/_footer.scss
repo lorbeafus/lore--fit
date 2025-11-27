@@ -47,10 +47,10 @@ footer {
                         display: flex;
                         gap: $spacing-md;
                         font-size: 2rem;
-                        text-decoration: none;
 
                         a {
                             color: $color-white;
+                            text-decoration: none;
                             @include transition(transform);
 
                             &:hover {
