@@ -1,0 +1,28 @@
+// ========================================
+// ESTILOS GENERALES - Fauget Fitness
+// ========================================
+
+@use 'variables' as *;
+
+// Reset universal
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Estilos del body
+body {
+    background-color: $color-background;
+    font-size: $font-size-base;
+    font-family: $font-primary;
+    color: $color-text;
+    line-height: 1.6;
+}
+
+// Clase de fuente (si se necesita aplicar específicamente)
+.indie-flower-regular {
+    font-family: $font-primary;
+    font-weight: $font-weight-regular;
+    font-style: normal;
+}

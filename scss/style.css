@@ -30,7 +30,8 @@ body {
   display: block;
   width: 100px;
   height: 100px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: transform 0.3s ease-in-out;
 }
 .barra-navegacion .nav-logo img:hover {
@@ -340,6 +341,4 @@ footer .footer-content .footer-bottom .footer-section.payment-methods img {
   .planes-list {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=style.css.map */

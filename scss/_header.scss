@@ -1,0 +1,151 @@
+// ========================================
+// HEADER - Fauget Fitness
+// ========================================
+
+@use 'Bases/variables' as *;
+@use 'Bases/mixins' as *;
+
+.barra-navegacion {
+    background-color: $color-primary;
+    @include flex-between;
+    padding: $spacing-sm $spacing-md;
+    position: relative;
+
+    // Logo del gimnasio
+    .nav-logo {
+        img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            @include transition(transform);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    // Botón hamburguesa
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: $spacing-xs;
+        z-index: 1000;
+
+        .hamburger__line {
+            width: 30px;
+            height: 3px;
+            background-color: $color-bg-white;
+            border-radius: 3px;
+            @include transition(all);
+        }
+
+        // Animación cuando está activo
+        &.active {
+            .hamburger__line:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .hamburger__line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger__line:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+        }
+
+        // Mostrar en tablets y móviles
+        @include respond-to(tablet) {
+            display: flex;
+        }
+    }
+
+    // Enlaces de navegación
+    .nav-links {
+        @include reset-list;
+        display: flex;
+        gap: $spacing-md;
+
+        li {
+            .nav__link {
+                @include reset-link;
+                color: $color-white;
+                font-weight: $font-weight-bold;
+                padding: $spacing-xs $spacing-sm;
+                border-radius: 4px;
+                @include transition(background-color);
+
+                &:hover {
+                    background-color: rgba($color-bg-white, 0.1);
+                }
+
+                &:active {
+                    background-color: rgba($color-bg-white, 0.2);
+                }
+            }
+        }
+
+        // Responsive: menú móvil
+        @include respond-to(tablet) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: $color-primary;
+            flex-direction: column;
+            gap: 0;
+            padding: 100px $spacing-lg $spacing-lg;
+            box-shadow: -5px 0 15px rgba($color-black, 0.3);
+            @include transition(right);
+            z-index: 999;
+
+            &.active {
+                right: 0;
+            }
+
+            li {
+                width: 100%;
+                border-bottom: 1px solid rgba($color-bg-white, 0.1);
+
+                .nav__link {
+                    display: block;
+                    padding: $spacing-md;
+                    width: 100%;
+
+                    &:hover {
+                        background-color: rgba($color-bg-white, 0.15);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Overlay para cerrar el menú al hacer clic fuera
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-black, 0.5);
+    z-index: 998;
+    @include transition(opacity);
+
+    &.active {
+        display: block;
+    }
+
+    @media (min-width: #{$breakpoint-tablet + 1}) {
+        display: none !important;
+    }
+}

@@ -1,0 +1,89 @@
+// ========================================
+// FOOTER - Fauget Fitness
+// ========================================
+
+@use 'Bases/variables' as *;
+@use 'Bases/mixins' as *;
+
+footer {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-lg $spacing-md;
+    margin-top: $spacing-xl;
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .copyright {
+            text-align: center;
+            margin-bottom: $spacing-md;
+
+            p {
+                font-size: $font-size-small;
+                opacity: 0.9;
+            }
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: $spacing-lg;
+
+            .footer-section {
+                flex: 1;
+                min-width: 250px;
+
+                h2,
+                h3 {
+                    margin-bottom: $spacing-sm;
+                    font-size: $font-size-h3;
+                }
+
+                &.social-links {
+                    .social-icons {
+                        display: flex;
+                        gap: $spacing-md;
+                        font-size: 2rem;
+                        text-decoration: none;
+
+                        a {
+                            color: $color-white;
+                            @include transition(transform);
+
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+
+                            i {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                &.payment-methods {
+                    img {
+                        max-width: 200px;
+                        height: auto;
+                        display: block;
+                    }
+                }
+            }
+
+            @include respond-to(tablet) {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                .footer-section {
+                    .social-icons {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

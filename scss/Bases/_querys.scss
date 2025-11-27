@@ -1,0 +1,83 @@
+// ========================================
+// MEDIA QUERIES - Fauget Fitness
+// ========================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Ajustes para tablets y móviles
+@include respond-to(tablet) {
+    body {
+        font-size: 18px;
+    }
+
+    .contenido {
+        padding: $spacing-lg $spacing-sm;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .barra-navegacion {
+        flex-direction: column;
+        padding: $spacing-sm;
+
+        .nav-logo {
+            margin-bottom: $spacing-sm;
+        }
+    }
+}
+
+// Ajustes para móviles pequeños
+@include respond-to(mobile) {
+    body {
+        font-size: 16px;
+    }
+
+    .contenido {
+        padding: $spacing-md $spacing-xs;
+
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .barra-navegacion {
+        .nav-logo {
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+
+    footer {
+        padding: $spacing-md $spacing-sm;
+
+        .footer-bottom {
+            .footer-section {
+                &.payment-methods {
+                    img {
+                        max-width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Ajustes para pantallas grandes
+@include respond-to(wide) {
+    .contenido {
+        padding: $spacing-xl * 1.5 $spacing-lg;
+    }
+
+    .planes-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

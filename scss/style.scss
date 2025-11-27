@@ -1,0 +1,21 @@
+// ========================================
+// STYLE PRINCIPAL - Fauget Fitness
+// ========================================
+// Este archivo importa todos los módulos SCSS
+
+// 1. Variables (primero, para que estén disponibles en todos los archivos)
+@use 'Bases/variables' as *;
+
+// 2. Mixins (segundo, para que estén disponibles en todos los archivos)
+@use 'Bases/mixins' as *;
+
+// 3. Estilos base y reset
+@use 'Bases/generales';
+
+// 4. Componentes
+@use 'header';
+@use 'main';
+@use 'footer';
+
+// 5. Media queries (último, para sobrescribir cuando sea necesario)
+@use 'Bases/querys';

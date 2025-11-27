@@ -1,0 +1,98 @@
+// ========================================
+// MAIN CONTENT - Fauget Fitness
+// ========================================
+
+@use 'Bases/variables' as *;
+@use 'Bases/mixins' as *;
+
+.contenido {
+    padding: $spacing-xl $spacing-md;
+    text-align: center;
+
+    h1 {
+        font-size: $font-size-h1;
+        color: $color-primary;
+        margin-bottom: $spacing-md;
+        font-weight: $font-weight-bold;
+    }
+
+    p {
+        font-size: $font-size-base;
+        margin-bottom: $spacing-lg;
+        line-height: 1.8;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+
+        &.nosotros {
+            text-align: justify;
+            padding: $spacing-lg;
+            background-color: $color-bg-white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba($color-black, 0.1);
+            margin: $spacing-lg auto;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba($color-black, 0.1);
+        @include transition(transform);
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+// Estilos para la página de planes
+.planes-list {
+    @include reset-list;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-lg;
+    padding: $spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    li {
+        background-color: linear-gradient(to bottom, $color-primary, $color-secondary);
+        padding: $spacing-lg;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba($color-black, 0.1);
+        @include transition(transform);
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba($color-black, 0.15);
+        }
+
+        span {
+            display: block;
+
+            &:first-child {
+                font-size: $font-size-h3;
+                font-weight: $font-weight-bold;
+                color: $color-primary;
+                margin-bottom: $spacing-sm;
+            }
+
+            &:last-child {
+                font-weight: $font-weight-bold;
+                color: $color-primary;
+                margin-top: $spacing-sm;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @include respond-to(mobile) {
+        grid-template-columns: 1fr;
+        padding: $spacing-md;
+    }
+}

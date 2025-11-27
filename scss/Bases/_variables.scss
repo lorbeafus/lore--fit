@@ -1,0 +1,40 @@
+// ========================================
+// VARIABLES - Fauget Fitness
+// ========================================
+
+// Colores
+$color-primary: #a21467d9;
+$color-background: #f2c1d9;
+$color-text: #2b142a;
+$color-white: #1a1818; // Color para texto del menú
+$color-bg-white: #fff; // Color blanco para fondos de cuadros
+$color-black: #000;
+
+// Fuentes
+$font-primary: 'Indie Flower', cursive;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Tamaños de fuente
+$font-size-base: 20px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+$font-size-small: 0.875rem;
+
+// Espaciado
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1200px;
+
+// Transiciones
+$transition-speed: 0.3s;
+$transition-ease: ease-in-out;
