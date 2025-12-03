@@ -1,0 +1,96 @@
+// ========================================
+// FORMULARIO DE CONTACTO - Fauget Fitness
+// ========================================
+
+@use 'Bases/variables' as *;
+@use 'Bases/mixins' as *;
+
+// Estilos del formulario
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-md;
+   
+  
+
+    label {
+        display: block;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-xs;
+        color: $color-text;
+        text-align: left;
+        font-size: $font-size-base;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: $spacing-sm;
+        border: 2px solid rgba($color-primary, 0.3);
+        border-radius: 8px;
+        font-family: $font-primary;
+        font-size: $font-size-base;
+        @include transition(border-color);
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+        }
+
+        &::placeholder {
+            color: rgba($color-text, 0.5);
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
+
+// Botón de enviar
+.btn-enviar {
+    background-color: $color-primary;
+    color: $color-bg-white;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+    padding: $spacing-sm $spacing-lg;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    @include transition(all);
+    margin-top: $spacing-md;
+    width: 100%;
+    max-width: 200px;
+
+    &:hover {
+        background-color: darken($color-primary, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 6px rgba($color-primary, 0.2);
+    }
+}
+
+// Mensaje de éxito
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: $spacing-md;
+    border-radius: 8px;
+    margin-top: $spacing-md;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: $font-weight-bold;
+}
+
+// Responsive
+@include respond-to(mobile) {
+    .btn-enviar {
+        max-width: 100%;
+    }
+}

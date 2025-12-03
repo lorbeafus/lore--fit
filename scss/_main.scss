@@ -17,6 +17,7 @@
     }
 
     p {
+       font-family: "Nunito", sans-serif;
         font-size: $font-size-base;
         margin-bottom: $spacing-lg;
         line-height: 1.8;
@@ -37,6 +38,7 @@
             margin: $spacing-lg auto;
         }
     }
+  
 
     img {
         max-width: 100%;
@@ -51,9 +53,10 @@
     }
 }
 
+
+
 // Estilos para la página de planes
 .planes-list {
-    @include reset-list;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: $spacing-lg;
@@ -62,6 +65,8 @@
     margin: 0 auto;
    
     li {
+        @include reset-list;
+        font-family: "Nunito", sans-serif;
         background-image: linear-gradient(to bottom, $color-bg-white, #f7b1e3);
         padding: $spacing-lg;
         border-radius: 12px;
@@ -79,12 +84,30 @@
 
         span {
             display: block;
+            position: relative;
+            padding-left: 6px; // Espacio reducido para la viñeta
+
+            // Viñeta personalizada con ::before
+            &::before {
+                content: "•"; // Viñeta
+                position: absolute;
+                left: 0;
+                color: $color-primary;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
 
             &:first-child {
                 font-size: $font-size-h3;
                 font-weight: $font-weight-bold;
                 color: $color-primary;
                 margin-bottom: $spacing-sm;
+                padding-left: 0; // Sin padding en el título
+                
+                // Sin viñeta en el título
+                &::before {
+                    content: none;
+                }
             }
 
             &:last-child {
@@ -92,6 +115,12 @@
                 color: $color-primary;
                 margin-top: $spacing-sm;
                 font-size: 1.2rem;
+                padding-left: 0; // Sin padding en el precio
+                
+                // Sin viñeta en el precio
+                &::before {
+                    content: none;
+                }
             }
         }
     }

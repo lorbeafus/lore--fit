@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
 }
 
 // Estilos del body
@@ -20,9 +21,10 @@ body {
     line-height: 1.6;
 }
 
-// Clase de fuente (si se necesita aplicar específicamente)
-.indie-flower-regular {
-    font-family: $font-primary;
-    font-weight: $font-weight-regular;
+// Clase de fuente Nunito
+.nunito-regular {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
 }

@@ -6,52 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Enlace iconos font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--Enlace Google Fonts - Nunito-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cinzel:wght@400..900&family=Indie+Flower&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <!--enlace CSS-->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <title>Fauget Fitness</title>
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init({
-                publicKey: "zN5poxSAc6404Q5HP" // 🔹 Tu clave pública real
-            });
-        })();
 
-        function enviarConsulta(e) {
-            e.preventDefault();
-
-            const templateParams = {
-                name: document.getElementById("nombre").value,
-                message:
-                    "📞 Teléfono: " + document.getElementById("telefono").value + "\n" +
-                    "📧 Correo: " + document.getElementById("email").value + "\n\n" +
-                    "📝 Consulta:\n" + document.getElementById("mensaje").value,
-                time: new Date().toLocaleString()
-            };
-
-            emailjs.send("service_bnvn7b9", "template_x1rc0b3", templateParams)
-                .then(function (response) {
-                    console.log("✅ Envío exitoso:", response);
-
-                    // Mostrar el mensaje de éxito
-                    const successMessage = document.getElementById('success-message');
-                    successMessage.style.display = 'block';
-
-                    // Limpiar el formulario
-                    document.getElementById("form-contacto").reset();
-
-                    // Ocultar el mensaje después de 3 segundos
-                    setTimeout(function () {
-                        successMessage.style.display = 'none';
-                    }, 3000);
-                }, function (error) {
-                    console.error("❌ Error al enviar:", error);
-                    alert("Ocurrió un error al enviar la consulta. Por favor, intenta nuevamente.");
-                });
-        }
-    </script>
 </head>
 
 <body>
@@ -81,7 +48,7 @@
     <!--CONTENIDO PRINCIPAL-->
     <main class="contenido">
         <h1>Fauget Fitness</h1>
-        <p>Dejanos tu consulta: </p>
+        <p>Escribinos si tenes alguna consulta: </p>
         <form id="form-contacto" onsubmit="enviarConsulta(event); return false;">
             <div class="form-group">
                 <label for="nombre">Nombre y Apellido</label>
@@ -133,8 +100,9 @@
             </div>
         </div>
     </footer>
-
+    <!--Scripts-->
     <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/contacto.js"></script>
 </body>
 
 </html>
