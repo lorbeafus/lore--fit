@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f2c1d9;
+  background-color: #e8d4dd;
   font-size: 20px;
   font-family: "Nunito", sans-serif;
   color: #2b142a;
@@ -22,7 +22,7 @@ body {
 }
 
 .barra-navegacion {
-  background-color: rgba(162, 20, 103, 0.8509803922);
+  background-color: rgba(118, 11, 74, 0.8509803922);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,7 +100,7 @@ body {
     width: 70%;
     max-width: 300px;
     height: 100vh;
-    background-color: rgba(162, 20, 103, 0.8509803922);
+    background-color: rgba(118, 11, 74, 0.8509803922);
     flex-direction: column;
     gap: 0;
     padding: 100px 2rem 2rem;
@@ -151,7 +151,7 @@ body {
 }
 .contenido h1 {
   font-size: 2.5rem;
-  color: rgba(162, 20, 103, 0.8509803922);
+  color: rgba(118, 11, 74, 0.8509803922);
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
@@ -169,9 +169,9 @@ body {
   transform: translateY(-5px);
 }
 .contenido p.nosotros {
-  text-align: justify;
+  text-align: center;
   padding: 2rem;
-  background-image: linear-gradient(to bottom, #fff, #f2c1d9);
+  background-image: linear-gradient(to bottom, #fff, #e8d4dd);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
@@ -223,14 +223,14 @@ body {
   content: "•";
   position: absolute;
   left: 0;
-  color: rgba(162, 20, 103, 0.8509803922);
+  color: rgba(118, 11, 74, 0.8509803922);
   font-weight: bold;
   font-size: 1.2em;
 }
 .planes-list li span:first-child {
   font-size: 1.5rem;
   font-weight: 700;
-  color: rgba(162, 20, 103, 0.8509803922);
+  color: rgba(118, 11, 74, 0.8509803922);
   margin-bottom: 1rem;
   padding-left: 0;
 }
@@ -239,7 +239,7 @@ body {
 }
 .planes-list li span:last-child {
   font-weight: 700;
-  color: rgba(162, 20, 103, 0.8509803922);
+  color: rgba(118, 11, 74, 0.8509803922);
   margin-top: 1rem;
   font-size: 1.2rem;
   padding-left: 0;
@@ -254,8 +254,89 @@ body {
   }
 }
 
+.detalle-plan {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.detalle-plan li {
+  font-family: "Nunito", sans-serif;
+  background-image: linear-gradient(to bottom, #fff, #f7b1e3);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.detalle-plan li span:first-child {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgba(118, 11, 74, 0.8509803922);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-left: 0;
+}
+.detalle-plan li span:first-child::before {
+  content: none;
+}
+.detalle-plan li span {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-left: 30px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #000;
+}
+.detalle-plan li span::before {
+  content: "•";
+  position: absolute;
+  left: 20%;
+  color: rgba(118, 11, 74, 0.8509803922);
+  font-weight: bold;
+  font-size: 1.5em;
+  top: -5px;
+}
+.detalle-plan li span:not(:first-child):not(:last-child) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 0;
+  text-align: center;
+}
+.detalle-plan li span:not(:first-child):not(:last-child)::before {
+  position: static;
+  content: "•";
+}
+.detalle-plan li span:last-child {
+  font-weight: bold;
+  color: #000;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-left: 0;
+}
+.detalle-plan li span:last-child::before {
+  content: "•";
+  color: rgba(118, 11, 74, 0.8509803922);
+  margin-right: 10px;
+  font-size: 1.5em;
+  vertical-align: middle;
+  display: inline-block;
+}
+.detalle-plan li .btn-enviar {
+  margin-top: 1.5rem;
+  width: 80%;
+}
+
 footer {
-  background-color: rgba(162, 20, 103, 0.8509803922);
+  background-color: rgba(118, 11, 74, 0.8509803922);
   color: #1a1818;
   padding: 2rem 1.5rem;
   margin-top: 3rem;
@@ -357,7 +438,7 @@ footer .footer-content .footer-bottom .footer-section.payment-methods img {
 .form-group textarea {
   width: 100%;
   padding: 1rem;
-  border: 2px solid rgba(162, 20, 103, 0.3);
+  border: 2px solid rgba(118, 11, 74, 0.3);
   border-radius: 8px;
   font-family: "Nunito", sans-serif;
   font-size: 20px;
@@ -366,8 +447,8 @@ footer .footer-content .footer-bottom .footer-section.payment-methods img {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: rgba(162, 20, 103, 0.8509803922);
-  box-shadow: 0 0 0 3px rgba(162, 20, 103, 0.1);
+  border-color: rgba(118, 11, 74, 0.8509803922);
+  box-shadow: 0 0 0 3px rgba(118, 11, 74, 0.1);
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
@@ -379,7 +460,7 @@ footer .footer-content .footer-bottom .footer-section.payment-methods img {
 }
 
 .btn-enviar {
-  background-color: rgba(162, 20, 103, 0.8509803922);
+  background-color: rgba(118, 11, 74, 0.8509803922);
   color: #fff;
   font-weight: 700;
   font-size: 20px;
@@ -393,13 +474,13 @@ footer .footer-content .footer-bottom .footer-section.payment-methods img {
   max-width: 200px;
 }
 .btn-enviar:hover {
-  background-color: rgba(116.6043956044, 14.3956043956, 74.1373626374, 0.8509803922);
+  background-color: rgba(71.3488372093, 6.6511627907, 44.7441860465, 0.8509803922);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(162, 20, 103, 0.3);
+  box-shadow: 0 4px 12px rgba(118, 11, 74, 0.3);
 }
 .btn-enviar:active {
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(162, 20, 103, 0.2);
+  box-shadow: 0 2px 6px rgba(118, 11, 74, 0.2);
 }
 
 .success-message {

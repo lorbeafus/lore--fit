@@ -30,7 +30,7 @@
             transform: translateY(-5px);
         }
         &.nosotros {
-            text-align: justify;
+            text-align: center;
             padding: $spacing-lg;
             background-image: linear-gradient(to bottom, $color-bg-white, $color-background);
             border-radius: 12px;
@@ -63,8 +63,7 @@
     padding: $spacing-lg;
     max-width: 1200px;
     margin: 0 auto;
-   
-    li {
+    li{
         @include reset-list;
         font-family: "Nunito", sans-serif;
         background-image: linear-gradient(to bottom, $color-bg-white, #f7b1e3);
@@ -128,5 +127,106 @@
     @include respond-to(mobile) {
         grid-template-columns: 1fr;
         padding: $spacing-md;
+    }
+}
+
+// Estilos para el detalle de planes (individual)
+.detalle-plan {
+    @include reset-list;
+    max-width: 500px; // Ancho más controlado como en la imagen
+    margin: 0 auto;
+    padding: $spacing-lg;
+
+    li {
+        font-family: "Nunito", sans-serif;
+        background-image: linear-gradient(to bottom, $color-bg-white, #f7b1e3);
+        padding: $spacing-xl; // Más padding interno
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba($color-black, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md; // Más espacio entre elementos
+        align-items: center; // Centrar todo el contenido verticalmente
+
+        // Título del plan (primer span)
+        span:first-child {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: $color-primary; // Color morado
+            margin-bottom: $spacing-md;
+            text-align: center;
+            padding-left: 0;
+            
+            &::before {
+                content: none; // Sin viñeta
+            }
+        }
+
+        // Elementos de la lista (spans intermedios)
+        span {
+            display: block;
+            width: 100%; 
+            position: relative;
+            padding-left: 30px; // Espacio para la viñeta
+            text-align: center; // Texto centrado como pidió el usuario
+            font-size: 1.1rem;
+            color: $color-black;
+
+            // Viñeta personalizada
+            &::before {
+                content: "•";
+                position: absolute;
+                left: 20%; // Truco para centrar visualmente la viñeta junto al texto si está centrado
+                // O mejor, si quiere texto centrado, la viñeta se ve rara a la izquierda absoluta.
+                // En la imagen la viñeta está al lado del texto.
+                // Vamos a usar display flex para el span si queremos viñeta + texto centrado
+                color: $color-primary;
+                font-weight: bold;
+                font-size: 1.5em;
+                top: -5px;
+            }
+        }
+        
+        // Corrección para items con viñeta centrados:
+        // Seleccionamos todos los spans que NO son el primero ni el ultimo
+        span:not(:first-child):not(:last-child) {
+             display: flex;
+             align-items: center;
+             justify-content: center; // Centrar el bloque texto+viñeta
+             gap: 10px; // Espacio entre viñeta y texto
+             padding-left: 0; // Quitamos padding porque usamos flex gap
+             text-align: center;
+
+             &::before {
+                 position: static; // Ya no absoluta
+                 content: "•";
+             }
+        }
+
+
+        // Precio (último span)
+        span:last-child {
+            font-weight: bold;
+            color: $color-black;
+            margin-top: $spacing-sm;
+            font-size: 1.2rem;
+            text-align: center;
+            padding-left: 0;
+            
+            &::before {
+                content: "•"; // En la imagen el precio TAMBIÉN tiene viñeta
+                color: $color-primary;
+                margin-right: 10px;
+                font-size: 1.5em;
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+
+        // Botón
+        .btn-enviar {
+            margin-top: $spacing-md;
+            width: 80%; // Botón ancho pero no total
+        }
     }
 }
