@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #e8d4dd;
+  background-color: #f2c1d9;
   font-size: 20px;
   font-family: "Nunito", sans-serif;
   color: #2b142a;
@@ -80,7 +80,7 @@ body {
 .barra-navegacion .nav-links li .nav__link {
   text-decoration: none;
   color: inherit;
-  color: #1a1818;
+  color: #fbd4f0;
   font-weight: 700;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -171,7 +171,7 @@ body {
 .contenido p.nosotros {
   text-align: center;
   padding: 2rem;
-  background-image: linear-gradient(to bottom, #fff, #e8d4dd);
+  background-image: linear-gradient(to bottom, #fff, #f2c1d9);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
@@ -337,7 +337,7 @@ body {
 
 footer {
   background-color: rgba(118, 11, 74, 0.8509803922);
-  color: #1a1818;
+  color: #fbd4f0;
   padding: 2rem 1.5rem;
   margin-top: 3rem;
 }
@@ -383,7 +383,7 @@ footer .footer-content .footer-bottom .footer-section.social-links .social-icons
   font-size: 1rem;
 }
 footer .footer-content .footer-bottom .footer-section.social-links .social-icons a {
-  color: #1a1818;
+  color: #fbd4f0;
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
 }
