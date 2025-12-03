@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Enlace iconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--Enlace Google Fonts - Nunito-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cinzel:wght@400..900&family=Indie+Flower&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <!--enlace CSS-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Pago Cancelado - Fauget Fitness</title>
+    <style>
+        .failure-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .failure-icon {
+            font-size: 80px;
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+
+        .failure-message h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .failure-message p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-home:hover {
+            background-color: #c82333;
+        }
+
+        .btn-retry {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-retry:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="failure-container">
+        <div class="failure-icon">
+            <i class="fas fa-times-circle"></i>
+        </div>
+        <div class="failure-message">
+            <h2>Pago Cancelado</h2>
+            <p>El pago no pudo ser procesado o fue cancelado.</p>
+            <p>Si deseas intentarlo nuevamente, puedes volver a nuestros planes.</p>
+            <a href="planes.html" class="btn-retry">Ver Planes</a>
+            <a href="../index.html" class="btn-home">Volver al Inicio</a>
+        </div>
+    </div>
+</body>
+
+</html>
