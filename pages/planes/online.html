@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Enlace iconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--Enlace Google Fonts - Nunito-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cinzel:wght@400..900&family=Indie+Flower&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <!--enlace CSS-->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <title>Fauget Fitness - Plan Online</title>
+</head>
+
+<body>
+    <header>
+        <!--BARRA MENU PRINCIPAL-->
+        <nav class="barra-navegacion">
+            <div class="nav-logo">
+                <img src="../../assets/img/logo.png" alt="Fauget Fitness Logo" width="100px" height="100px">
+            </div>
+
+            <!-- Botón hamburguesa para móvil -->
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <!--Enlaces del menu principal-->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html" class="nav__link">Home</a></li>
+                <li><a href="../../pages/nosotros.html" class="nav__link">Sobre nosotros</a></li>
+                <li><a href="../../pages/planes.html" class="nav__link">Planes</a></li>
+                <li><a href="../../pages/contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--CONTENIDO PRINCIPAL-->
+    <main class="contenido">
+        <h1>Fauget Fitness</h1>
+        <p class="plan-title">Plan Online</p>
+        <ul class="plan">
+            <li>
+                <span>Acceso al chat con el entrenador personal, podras consultar tus rutinas y progreso</span>
+                <span>Acceso a rutinas personalizadas que podras realizar en casa con o sin equipo</span>
+                <span>Sesiones quincenales con nutricionista que monitorizara tu progreso</span>
+                <span>Rutinas personalizadas que se ajustan a tus necesidades</span>
+                <span>Precio: $50.000/mes</span>
+                <!--Enlace al checkout-->
+                <button class="btn-enviar">Reservar</button>
+            </li>
+
+        </ul>
+    </main>
+    <!--FOOTER medios de pago y enlace con instagram-->
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy;2025 Fauget Fitness. Todos los derechos reservados.</p>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-section payment-methods">
+                    <h3>Métodos de pago: Mercado Pago</h3>
+                </div>
+
+                <div class="footer-section social-links">
+                    <h2>Síguenos en nuestras redes:</h2>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/menu.js"></script>
+</body>
+
+</html>
