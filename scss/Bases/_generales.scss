@@ -20,8 +20,15 @@ body {
     color: $color-text;
     line-height: 1.6;
 }
-canvas {
+//fondo pagina principal
+#canvas {
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 // Clase de fuente Nunito
