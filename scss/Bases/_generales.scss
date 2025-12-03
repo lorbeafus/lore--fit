@@ -20,6 +20,9 @@ body {
     color: $color-text;
     line-height: 1.6;
 }
+canvas {
+    display: block;
+}
 
 // Clase de fuente Nunito
 .nunito-regular {
