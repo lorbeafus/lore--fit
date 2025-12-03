@@ -1,8 +1,9 @@
 # Archivos de configuración local
-.env
+backend/.env
 
 # Dependencias
 node_modules/
+backend/node_modules/
 
 # Logs
 *.log
