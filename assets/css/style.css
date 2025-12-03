@@ -217,7 +217,7 @@ body {
 .planes-list li span {
   display: block;
   position: relative;
-  padding-left: 6px;
+  padding-left: 20px;
 }
 .planes-list li span::before {
   content: "•";
@@ -329,6 +329,15 @@ footer .footer-content .footer-bottom .footer-section.payment-methods img {
   footer .footer-content .footer-bottom .footer-section .social-icons {
     justify-content: center;
   }
+}
+
+#form-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .form-group {

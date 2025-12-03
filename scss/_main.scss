@@ -85,7 +85,7 @@
         span {
             display: block;
             position: relative;
-            padding-left: 6px; // Espacio reducido para la viñeta
+            padding-left: 20px; // Espacio reducido para la viñeta
 
             // Viñeta personalizada con ::before
             &::before {

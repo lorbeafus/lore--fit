@@ -6,6 +6,15 @@
 @use 'Bases/mixins' as *;
 
 // Estilos del formulario
+#form-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: $spacing-md;
+    background-color: rgba($color-bg-white, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba($color-black, 0.05);
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
