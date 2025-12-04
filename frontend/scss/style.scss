@@ -17,6 +17,9 @@
 @use 'main';
 @use 'footer';
 @use 'contacto';
+@use 'auth';
+@use 'dashboard';
+@use 'admin';
 
 // 5. Media queries (último, para sobrescribir cuando sea necesario)
 @use 'Bases/querys';

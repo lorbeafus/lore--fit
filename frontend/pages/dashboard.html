@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard de usuario - Fauget Fitness">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cinzel:wght@400..900&family=Indie+Flower&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Mi Dashboard - Fauget Fitness</title>
+</head>
+
+<body>
+    <header>
+        <nav class="barra-navegacion">
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img src="../assets/img/logo.png" alt="Fauget Fitness Logo" width="100px" height="100px">
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" class="nav__link">Home</a></li>
+                <li><a href="./nosotros.html" class="nav__link">Sobre nosotros</a></li>
+                <li><a href="./planes.html" class="nav__link">Planes</a></li>
+                <li><a href="./contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+
+            <div id="userDisplay"></div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Mi Dashboard</h1>
+            <p id="welcomeMessage">Cargando...</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Plan Contratado -->
+            <div class="dashboard-card plan-card">
+                <div class="card-header">
+                    <i class="fas fa-dumbbell"></i>
+                    <h2>Mi Plan</h2>
+                </div>
+                <div class="card-content" id="planContent">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estado de Pago -->
+            <div class="dashboard-card payment-card">
+                <div class="card-header">
+                    <i class="fas fa-credit-card"></i>
+                    <h2>Estado de Pago</h2>
+                </div>
+                <div class="card-content" id="paymentContent">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horas en Gimnasio -->
+            <div class="dashboard-card hours-card">
+                <div class="card-header">
+                    <i class="fas fa-clock"></i>
+                    <h2>Última Semana</h2>
+                </div>
+                <div class="card-content" id="hoursContent">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Próximas Reservas -->
+            <div class="dashboard-card bookings-card">
+                <div class="card-header">
+                    <i class="fas fa-calendar-check"></i>
+                    <h2>Próximas Reservas</h2>
+                </div>
+                <div class="card-content" id="bookingsContent">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendario de Reservas -->
+            <div class="dashboard-card calendar-card">
+                <div class="card-header">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h2>Reservar Turno</h2>
+                </div>
+                <div class="card-content">
+                    <div class="calendar-controls">
+                        <button id="prevMonth" class="calendar-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h3 id="currentMonth">Cargando...</h3>
+                        <button id="nextMonth" class="calendar-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div id="calendar" class="calendar-grid"></div>
+                    <div id="timeSlotsModal" class="time-slots-modal" style="display: none;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="selectedDateTitle">Selecciona un horario</h3>
+                                <button id="closeModal" class="close-modal">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div id="timeSlotsList" class="time-slots-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy;2025 Fauget Fitness. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-section payment-methods">
+                    <h3>Métodos de pago: Mercado Pago y Transferencia</h3>
+                </div>
+                <div class="footer-section social-links">
+                    <h2>Síguenos en nuestras redes:</h2>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/user-nav.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+
+</html>

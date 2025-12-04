@@ -1,0 +1,29 @@
+}
+
+// Gym settings (developer only)
+async function loadGymSettings() {
+    // Implementation for gym settings
+    document.getElementById('gymHours').innerHTML = '<p>Configuración de horarios disponible próximamente</p>';
+    document.getElementById('holidaysList').innerHTML = '<p>Gestión de festivos disponible próximamente</p>';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', async () => {
+    if (!checkAdminAccess()) return;
+    
+    const currentUser = await loadCurrentUser();
+    if (!currentUser) return;
+
+    initTabs();
+    loadUsers();
+
+    // Event listener for assign plan button
+    const assignBtn = document.getElementById('assignPlanSubmitBtn');
+    if (assignBtn) {
+        assignBtn.addEventListener('click', assignPlan);
+    }
+});
