@@ -1,0 +1,14 @@
+@use 'Bases/variables' as v;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: v.$font-primary;
+    background-color: v.$color-background;
+    color: v.$color-text;
+    overflow-x: hidden;
+}
