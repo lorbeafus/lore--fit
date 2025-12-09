@@ -2,13 +2,16 @@
 // Authentication Pages Styles
 // ============================================
 
+@use 'Bases/variables' as *;
+@use 'Bases/extends' as *;
+
 .auth-container {
     min-height: calc(100vh - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, $color-primary 0%, $color-red 100%);
     position: relative;
 
     &::before {
@@ -64,7 +67,7 @@
         font-weight: 700;
         color: #333;
         margin-bottom: 0.5rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, $color-primary 0%, $color-red 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -89,7 +92,7 @@
 
             i {
                 margin-right: 0.5rem;
-                color: #667eea;
+                color: $color-primary;
             }
         }
 
@@ -105,8 +108,8 @@
 
             &:focus {
                 outline: none;
-                border-color: #667eea;
-                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                border-color: $color-primary;
+                box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
             }
 
             &::placeholder {
@@ -137,13 +140,13 @@
         transform: translateY(-50%);
         background: none;
         border: none;
-        color: #666;
+        color: $color-primary;
         cursor: pointer;
         padding: 0.5rem;
         transition: color 0.3s ease;
 
         &:hover {
-            color: #667eea;
+            color: $color-primary;
         }
 
         &:focus {
@@ -211,49 +214,7 @@
 }
 
 .btn-auth {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    font-family: 'Nunito', sans-serif;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.5s ease;
-    }
-
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-
-        &::before {
-            left: 100%;
-        }
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-        transform: none;
-    }
+    @extend %btn-moderno;
 
     .btn-loader {
         margin-left: 0.5rem;
@@ -284,18 +245,18 @@
     border-top: 1px solid #e0e0e0;
 
     p {
-        color: #666;
+        color: $color-primary;
         font-size: 0.95rem;
     }
 
     a {
-        color: #667eea;
+        color: $color-primary;
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s ease;
 
         &:hover {
-            color: #764ba2;
+            color: $color-primary;
             text-decoration: underline;
         }
     }
@@ -319,7 +280,7 @@
 
             i {
                 font-size: 6rem;
-                color: #667eea;
+                color: $color-white;
                 opacity: 0.8;
             }
         }
@@ -344,7 +305,7 @@
 
                 span {
                     font-weight: 600;
-                    color: #667eea;
+                    color: $color-primary;
                 }
             }
         }
@@ -382,7 +343,7 @@
 // ============================================
 
 .nav__link--active {
-    color: #667eea !important;
+    color: $color-white !important;
     font-weight: 700;
     position: relative;
 
@@ -393,7 +354,7 @@
         left: 0;
         right: 0;
         height: 2px;
-        background: #667eea;
+        background: $color-white;
     }
 }
 
@@ -429,19 +390,19 @@
 
     i {
         font-size: 1.75rem;
-        color: #667eea;
+        color: $color-white;
         transition: all 0.3s ease;
     }
 
     span {
         font-size: 0.85rem;
         font-weight: 600;
-        color: #333;
+        color: $color-bg-white; //Color debajo del icono de inicio de sesión
         white-space: nowrap;
     }
 
     &:hover i {
-        color: #764ba2;
+        color: $color-red;
         transform: scale(1.1);
     }
 }

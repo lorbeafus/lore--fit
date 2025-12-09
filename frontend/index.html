@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Meta etiquetas-->
+    <meta name="description"
+        content="Fauget Fitness - Transforma tu cuerpo y mente con nuestros planes de entrenamiento personalizados.">
+    <meta name="keywords" content="Fauget Fitness, fitness, entrenamiento, planes, salud, bienestar">
+
     <!--Enlace iconos font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!--Enlace Google Fonts - Nunito-->
@@ -22,7 +27,7 @@
         <nav class="barra-navegacion">
             <div class="nav-logo">
                 <a href="./index.html">
-                    <img src="./assets/img/logo.png" alt="Fauget Fitness Logo" width="100px" height="100px">
+                    <img src="./assets/img/logo.webp" alt="Fauget Fitness Logo" width="100px" height="100px">
                 </a>
             </div>
 
@@ -44,18 +49,38 @@
             <!-- User Display -->
             <div id="userDisplay"></div>
         </nav>
-        <!--CONTENIDO PRINCIPAL-->
-        <main class="contenido">
 
-            <h1>Fauget Fitness</h1>
-            <p>Transforma tu cuerpo y mente con nuestros planes de entrenamiento personalizados.</p>
+        <!--CONTENIDO PRINCIPAL - HERO SECTION-->
+        <section class="hero-section">
+            <!-- H1 para SEO y accesibilidad (visualmente oculto) -->
+            <h1 class="sr-only">Fauget Fitness - Entrenamiento Personalizado</h1>
+
+            <!-- Canvas de partículas animadas -->
             <canvas id="canvas"></canvas>
-            <p class="collection">
-                <a href="https://codepen.io/collection/AGZywR" target="_blank"></a>
-                <img src="./assets/img/foto principal.jpg" alt="Imagen de fitness" width="400px" height="300px">
-            </p>
-        </main>
+
+            <!-- Imagen de fondo -->
+            <div class="hero-background">
+                <img src="./assets/img/foto principal.webp" alt="Fauget Fitness Background">
+            </div>
+
+            <!-- Logo central -->
+            <div class="hero-logo">
+                <img src="./assets/img/logo.webp" alt="Fauget Fitness Logo">
+            </div>
+
+            <!-- Carrusel de texto -->
+            <div class="hero-carousel">
+                <h2 class="carousel-text active">Tu Cambio Comienza Aquí</h2>
+                <h2 class="carousel-text">Transforma Tu Cuerpo Y Mente</h2>
+                <h2 class="carousel-text">En Tu Casa O En El Gym</h2>
+                <h2 class="carousel-text">Te Ayudamos A Lograr Tus Objetivos</h2>
+            </div>
+
+            <!-- Botón CTA -->
+            <a href="./pages/planes.html" class="hero-cta">Quiero Empezar!</a>
+        </section>
     </header>
+
     <!--FOOTER medios de pago y enlace con instagram-->
     <footer>
         <div class="footer-content">
@@ -76,6 +101,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -83,6 +109,7 @@
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/user-nav.js"></script>
     <script src="./assets/js/babel.js"></script>
+    <script src="./assets/js/carousel.js"></script>
 </body>
 
 </html>

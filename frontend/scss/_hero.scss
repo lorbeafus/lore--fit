@@ -1,0 +1,165 @@
+// ========================================
+// HERO SECTION STYLES - Fauget Fitness
+// ========================================
+
+@use 'Bases/variables' as *;
+@use 'Bases/mixins' as *;
+@use 'Bases/extends' as *;
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// Canvas de partículas - capa superior con transparencia
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; // Sobre el fondo pero debajo del overlay
+    pointer-events: none; // Permite clicks a través del canvas
+    opacity: 0.4; // Transparencia para ver mejor el fondo
+}
+
+// Imagen de fondo
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; // Capa más baja
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    // Overlay oscuro para mejorar legibilidad del texto
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); // Oscurecer 30% para ver la foto
+        z-index: 3; // Sobre la imagen y el canvas
+    }
+}
+
+// Logo central
+.hero-logo {
+    position: relative;
+    z-index: 4; // Sobre todo
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    @include respond-to(mobile) {
+        margin-bottom: 1.5rem;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+// Carrusel de texto
+.hero-carousel {
+    position: relative;
+    z-index: 4; // Sobre todo
+    width: 90%;
+    max-width: 1000px;
+    height: 150px; // Altura fija para evitar saltos
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .carousel-text {
+        position: absolute;
+        font-family: "Nunito", sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: $font-weight-bold;
+        color: $color-white;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow:
+            2px 2px 4px rgba(0, 0, 0, 0.8),
+            0 0 20px rgba($color-primary, 0.5);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-in-out;
+        padding: 0 1rem;
+        line-height: 1.2;
+        margin: 0; // Reset margin for h2
+
+        &.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @include respond-to(mobile) {
+        height: 100px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+// Botón CTA
+.hero-cta {
+    @extend %btn-moderno;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+    z-index: 4; // Asegurar z-index
+
+    @include respond-to(mobile) {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+// Animaciones
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

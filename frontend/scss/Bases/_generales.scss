@@ -20,6 +20,7 @@ body {
     color: $color-text;
     line-height: 1.6;
 }
+
 //fondo pagina principal
 #canvas {
     display: block;
@@ -37,4 +38,18 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+// Clase para elementos visualmente ocultos pero accesibles
+// (Screen Reader Only - para lectores de pantalla y SEO)
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

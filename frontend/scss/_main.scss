@@ -17,7 +17,8 @@
     }
 
     p {
-       font-family: "Nunito", sans-serif;
+        background-color: $color-red;
+        font-family: "Nunito", sans-serif;
         font-size: $font-size-base;
         margin-bottom: $spacing-lg;
         line-height: 1.8;
@@ -29,16 +30,17 @@
         &:hover {
             transform: translateY(-5px);
         }
+
         &.nosotros {
             text-align: center;
             padding: $spacing-lg;
-            background-image: linear-gradient(to bottom, $color-bg-white, $color-background);
+            background-color: linear-gradient(to bottom, $color-bg-white, $color-red);
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba($color-black, 0.1);
             margin: $spacing-lg auto;
         }
     }
-  
+
 
     img {
         max-width: 100%;
@@ -62,7 +64,8 @@
     padding: $spacing-lg;
     max-width: 1200px;
     margin: 0 auto;
-    li{
+
+    li {
         @include reset-list;
         font-family: "Nunito", sans-serif;
         background-image: linear-gradient(to bottom, $color-bg-white, #f7b1e3);
@@ -78,6 +81,13 @@
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba($color-black, 0.15);
+        }
+
+        a {
+            margin-top: auto;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
         }
 
         span {
@@ -101,7 +111,7 @@
                 color: $color-primary;
                 margin-bottom: $spacing-sm;
                 padding-left: 0; // Sin padding en el título
-                
+
                 // Sin viñeta en el título
                 &::before {
                     content: none;
@@ -114,7 +124,7 @@
                 margin-top: $spacing-sm;
                 font-size: 1.2rem;
                 padding-left: 0; // Sin padding en el precio
-                
+
                 // Sin viñeta en el precio
                 &::before {
                     content: none;
@@ -155,7 +165,7 @@
             margin-bottom: $spacing-md;
             text-align: center;
             padding-left: 0;
-            
+
             &::before {
                 content: none; // Sin viñeta
             }
@@ -164,7 +174,7 @@
         // Elementos de la lista (spans intermedios)
         span {
             display: block;
-            width: 100%; 
+            width: 100%;
             position: relative;
             padding-left: 30px; // Espacio para la viñeta
             text-align: center; // Texto centrado como pidió el usuario
@@ -185,21 +195,21 @@
                 top: -5px;
             }
         }
-        
+
         // Corrección para items con viñeta centrados:
         // Seleccionamos todos los spans que NO son el primero ni el ultimo
         span:not(:first-child):not(:last-child) {
-             display: flex;
-             align-items: center;
-             justify-content: center; // Centrar el bloque texto+viñeta
-             gap: 10px; // Espacio entre viñeta y texto
-             padding-left: 0; // Quitamos padding porque usamos flex gap
-             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; // Centrar el bloque texto+viñeta
+            gap: 10px; // Espacio entre viñeta y texto
+            padding-left: 0; // Quitamos padding porque usamos flex gap
+            text-align: center;
 
-             &::before {
-                 position: static; // Ya no absoluta
-                 content: "•";
-             }
+            &::before {
+                position: static; // Ya no absoluta
+                content: "•";
+            }
         }
 
 
@@ -211,7 +221,7 @@
             font-size: 1.2rem;
             text-align: center;
             padding-left: 0;
-            
+
             &::before {
                 content: "•"; // En la imagen el precio TAMBIÉN tiene viñeta
                 color: $color-primary;

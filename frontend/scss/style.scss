@@ -11,9 +11,11 @@
 
 // 3. Estilos base y reset
 @use 'Bases/generales';
+@use 'Bases/extends';
 
 // 4. Componentes
 @use 'header';
+@use 'hero';
 @use 'main';
 @use 'footer';
 @use 'contacto';

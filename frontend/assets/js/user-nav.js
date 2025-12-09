@@ -15,13 +15,16 @@ async function loadUserInNav() {
 
     if (!userDisplay) return;
 
+    const isInPages = window.location.pathname.includes('/pages/');
+    const basePath = isInPages ? '.' : './pages';
+
     const token = getToken();
 
     if (!token) {
         // Usuario no logueado - mostrar enlaces de login/registro
         userDisplay.innerHTML = `
             <div class="nav-auth-links">
-                <a href="/pages/login.html" class="nav-auth-link">
+                <a href="${basePath}/login.html" class="nav-auth-link">
                     <i class="fas fa-sign-in-alt"></i>
                     <span>Iniciar Sesión</span>
                 </a>
@@ -45,7 +48,7 @@ async function loadUserInNav() {
             // Usuario logueado - mostrar icono y nombre
             const user = data.data;
             const adminLink = (user.role === 'admin' || user.role === 'developer')
-                ? `<a href="/pages/admin.html" class="nav-user-link">
+                ? `<a href="${basePath}/admin.html" class="nav-user-link">
                     <i class="fas fa-cog"></i>
                     <span>Admin</span>
                 </a>`
@@ -54,11 +57,11 @@ async function loadUserInNav() {
             userDisplay.innerHTML = `
                 <div class="nav-user-info">
                     ${adminLink}
-                    <a href="/pages/dashboard.html" class="nav-user-link">
+                    <a href="${basePath}/dashboard.html" class="nav-user-link">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a href="/pages/profile.html" class="nav-user-link">
+                    <a href="${basePath}/profile.html" class="nav-user-link">
                         <i class="fas fa-user-circle"></i>
                         <span class="nav-user-name">${user.nombre}</span>
                     </a>
@@ -69,7 +72,7 @@ async function loadUserInNav() {
             localStorage.removeItem('authToken');
             userDisplay.innerHTML = `
                 <div class="nav-auth-links">
-                    <a href="/pages/login.html" class="nav-auth-link">
+                    <a href="${basePath}/login.html" class="nav-auth-link">
                         <i class="fas fa-sign-in-alt"></i>
                         <span>Iniciar Sesión</span>
                     </a>
@@ -81,7 +84,7 @@ async function loadUserInNav() {
         // En caso de error, mostrar login
         userDisplay.innerHTML = `
             <div class="nav-auth-links">
-                <a href="/pages/login.html" class="nav-auth-link">
+                <a href="${basePath}/login.html" class="nav-auth-link">
                     <i class="fas fa-sign-in-alt"></i>
                     <span>Iniciar Sesión</span>
                 </a>

@@ -4,6 +4,7 @@
 
 @use 'Bases/variables' as *;
 @use 'Bases/mixins' as *;
+@use 'Bases/extends' as *;
 
 // Estilos del formulario
 #form-contacto {
@@ -19,8 +20,8 @@
     display: flex;
     flex-direction: column;
     margin-bottom: $spacing-md;
-   
-  
+
+
 
     label {
         display: block;
@@ -60,29 +61,10 @@
 
 // Botón de enviar
 .btn-enviar {
-    background-color: $color-primary;
-    color: $color-bg-white;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-base;
-    padding: $spacing-sm $spacing-lg;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    @include transition(all);
+    @extend %btn-moderno;
     margin-top: $spacing-md;
     width: 100%;
     max-width: 200px;
-
-    &:hover {
-        background-color: darken($color-primary, 10%);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba($color-primary, 0.3);
-    }
-
-    &:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 6px rgba($color-primary, 0.2);
-    }
 }
 
 // Mensaje de éxito
