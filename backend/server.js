@@ -44,7 +44,7 @@ mongoose.connect(process.env.MONGODB_URI)
     });
 
 // Servir archivos estáticos desde el directorio frontend
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '../docs')));
 
 // Servir archivos de uploads (fotos de perfil)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

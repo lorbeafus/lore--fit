@@ -3,8 +3,8 @@
     "start": "node server.js",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon server.js",
-    "dev:scss": "sass --watch ../frontend/scss:../frontend/assets/css --style compressed",
-    "build:scss": "sass ../frontend/scss:../frontend/assets/css --style compressed"
+    "dev:scss": "sass --watch ../docs/scss:../docs/assets/css --style compressed",
+    "build:scss": "sass ../docs/scss:../docs/assets/css --style compressed"
   },
   "dependencies": {
     "@sendinblue/client": "^3.3.1",
